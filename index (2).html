@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <title>NEXUS — AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="splash" class="splash">
+    <div class="splash-logo-wrap">
+      <img src="assets/phoenix-logo.jpg" alt="Phoenix logo" class="splash-phoenix" />
+      <div class="splash-title">NEXUS</div>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="topbar">
+      <button class="brand" aria-label="Nexus home" data-action="home">
+        <img src="assets/phoenix-logo.jpg" alt="" />
+        <span>Nexus</span>
+      </button>
+
+      <div class="top-actions">
+        <button id="profileBtn" class="icon-btn profile-btn hidden" aria-label="Profile">◉</button>
+        <button id="privacyBtn" class="icon-btn hidden" aria-label="Privacy mode">◌</button>
+        <button id="loginBtn" class="login-btn"><span>◉</span> Login</button>
+        <button id="menuBtn" class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <section id="chatPage" class="chat-page">
+        <div class="hero">
+          <div id="privacyBanner" class="privacy-banner hidden">Privacy mode is on</div>
+          <h1 id="heroTitle">WELCOME TO NEXUS</h1>
+        </div>
+
+        <div class="composer-area">
+          <p id="helperText">How can I help you today ?</p>
+          <div class="composer">
+            <textarea id="promptInput" rows="1" placeholder="Begin a chat"></textarea>
+            <div class="composer-tools">
+              <label class="tool-btn" title="Attach image">
+                <input id="imageInput" type="file" accept="image/*" hidden />
+                <span>▧</span>
+              </label>
+              <button id="micBtn" class="tool-btn" title="Use microphone">⌕</button>
+              <button id="sendBtn" class="send-btn" title="Send">→</button>
+            </div>
+          </div>
+          <div id="attachmentPreview" class="attachment-preview hidden"></div>
+        </div>
+      </section>
+
+      <section id="settingsPage" class="settings-page hidden">
+        <div class="settings-header">
+          <button class="back-btn" data-action="home">←</button>
+          <h2>Settings</h2>
+        </div>
+        <div class="settings-list">
+          <button class="settings-row" data-setting="personalize">
+            <span class="settings-icon">✦</span><span>Personalize</span><span>›</span>
+          </button>
+          <button class="settings-row" data-setting="appearance">
+            <span class="settings-icon">◐</span><span>Appearance</span><span>›</span>
+          </button>
+          <button class="settings-row" data-setting="general">
+            <span class="settings-icon">⚙</span><span>General</span><span>›</span>
+          </button>
+          <button class="settings-row" data-setting="about">
+            <span class="settings-icon">!</span><span>About</span><span>›</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <aside id="sidePanel" class="side-panel">
+      <div class="panel-head">
+        <h3>NEXUS</h3>
+        <button id="closePanel" class="close-btn">×</button>
+      </div>
+      <nav class="side-nav">
+        <button data-tool="new"><span>＋</span>New conversation</button>
+        <button data-tool="research"><span>⌕</span>Deep research</button>
+        <button data-tool="finance"><span>◇</span>Finance</button>
+        <button data-tool="problem"><span>?</span>Problem solving</button>
+        <button data-tool="coding"><span>&lt;/&gt;</span>Coding</button>
+        <button data-tool="analysis"><span>◫</span>Analysis</button>
+      </nav>
+      <div class="panel-bottom">
+        <button data-tool="settings"><span>⚙</span>Settings</button>
+        <button data-tool="help"><span>?</span>Help</button>
+      </div>
+    </aside>
+    <div id="overlay" class="overlay"></div>
+
+    <div id="modalLayer" class="modal-layer hidden">
+      <div id="modal" class="modal"></div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
